@@ -133,13 +133,25 @@ const doAction = (action) => {
         case settings.PAYMENTS_ENABLED:
           initialize(action.value, 'changeSettingPaymentsEnabled')
           break
+
         case settings.PAYMENTS_CONTRIBUTION_AMOUNT:
           setPaymentInfo(action.value)
           break
+
         case settings.MINIMUM_VISIT_TIME:
+          if (action.value <= 0) break
+
+          synopsis.options.minDuration = action.value * msecs.second
+          updatePublisherInfo()
           break
+
         case settings.MINIMUM_VISTS:
+          if (action.value <= 0) break
+
+          synopsis.options.minPublisherVisits = action.value
+          updatePublisherInfo()
           break
+
         default:
           break
       }
