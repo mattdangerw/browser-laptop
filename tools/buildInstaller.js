@@ -96,6 +96,12 @@ if (isDarwin) {
       ' --dest dist/' +
       ' --arch amd64' +
       ' --config res/linuxPackaging.json',
+    // .flatpak file
+    'electron-installer-flatpak' +
+      ' --src Brave-linux-x64/' +
+      ' --dest dist/' +
+      ' --arch x86_64' +
+      ' --config res/linuxPackaging.json',
     // .tar.bz2 file
     'tar -jcvf dist/Brave.tar.bz2 ./Brave-linux-x64'
   ]
